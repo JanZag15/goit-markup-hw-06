@@ -73,6 +73,7 @@ button {
 .container-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* navigation */
@@ -90,7 +91,6 @@ button {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin-right: 76px;
   padding: 17px 0;
 }
 
@@ -106,63 +106,109 @@ button {
   position: relative;
 }
 
-.nav-link {
-  display: block;
-  color: #2e2f42;
-  font-weight: 500;
-  padding: 24px 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-link:hover,
-.nav-link:focus {
-  color: #404bbf;
-}
-
-.nav-link.studio {
-  position: relative;
-  color: #404bbf;
-}
-
-.nav-link.studio::after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 48px;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #404bbf;
-  margin-top: 20px;
-  bottom: -1px;
-}
-
 .adres {
   display: none;
   font-style: normal;
   margin-left: auto;
 }
 
-.adres-list {
-  display: flex;
-}
-
 .adres-item {
-  padding: 24px 0;
-  margin-right: 40px;
 }
 
 .adres-item:last-child {
   margin-right: 0;
 }
 
-.adres-link {
-  color: #434455;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.open-menu-btn {
+  padding: 0;
+  line-height: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
 }
 
-.adres-link:hover,
-.adres-link:focus {
-  color: #404bbf;
+@media screen and (min-width: 768px) {
+  .open-menu-btn {
+    display: none;
+  }
+
+  .logo-header {
+    margin-right: 120px;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 40px;
+  }
+
+  .nav-link {
+    display: block;
+    color: #2e2f42;
+    font-weight: 500;
+    padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #404bbf;
+  }
+
+  .nav-link.studio {
+    position: relative;
+    color: #404bbf;
+  }
+
+  .nav-link.studio::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+    margin-top: 20px;
+    bottom: -1px;
+  }
+
+  .adres {
+    display: block;
+  }
+
+  .adres-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .adres-link {
+    color: #434455;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .adres-link:hover,
+  .adres-link:focus {
+    color: #404bbf;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .logo-header {
+    margin-right: 76px;
+  }
+
+  .adres-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .adres-link {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
 .main {
