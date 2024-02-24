@@ -44,9 +44,22 @@ button {
 }
 
 .container {
-  width: 1158px;
-  padding: 0 15px;
+  max-width: 320px;
+  padding: 0 16px;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
 
 .header {
@@ -70,16 +83,15 @@ button {
 }
 
 .logo {
-  display: inline-block;
   color: #4d5ae5;
   font-family: 'Raleway', sans-serif;
-  font-weight: 700;
   font-size: 18px;
+  font-weight: 700;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-right: 76px;
-  margin-bottom: 16px;
+  padding: 17px 0;
 }
 
 .logo-header {
@@ -87,9 +99,7 @@ button {
 }
 
 .nav-list {
-  display: flex;
-  width: 261px;
-  gap: 40px;
+  display: none;
 }
 
 .nav-item {
@@ -127,9 +137,8 @@ button {
 }
 
 .adres {
-  display: flex;
+  display: none;
   font-style: normal;
-  justify-content: flex-end;
   margin-left: auto;
 }
 
