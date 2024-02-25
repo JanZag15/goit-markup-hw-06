@@ -125,6 +125,7 @@ button {
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  background-color: transparent;
 }
 
 @media only screen and (min-width: 768px) {
@@ -206,9 +207,22 @@ button {
   }
 }
 
+.adres-item {
+  font-size: 0px;
+}
+
 .adres-link {
   color: #434455;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+
+@media only screen and (min-width: 1158px) {
+  .adres-link {
+    font-size: 16px;
+  }
 }
 
 .adres-link:hover,
@@ -454,6 +468,15 @@ button {
 
 .text {
   display: inline-block;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+@media only screen and (min-width: 1158px) {
+  .text {
+    font-weight: 400;
+  }
 }
 
 /* team */
@@ -471,6 +494,7 @@ button {
 
 .team-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 72px;
 }
@@ -482,7 +506,7 @@ button {
 }
 
 .team-item {
-  width: 100%;
+  width: 264px;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -498,7 +522,7 @@ button {
 
 @media screen and (min-width: 768px) {
   .team-item {
-    width: calc((100% - 24px * 1) / 2);
+    width: calc((100% - 1) / 2);
   }
 }
 
@@ -727,6 +751,11 @@ button {
   line-height: 1.17;
 }
 
+.box-logo {
+  padding: 0;
+  margin-bottom: 16px;
+}
+
 .footer-text {
   text-align: left;
   max-width: 288px;
@@ -736,12 +765,6 @@ button {
 @media only screen and (min-width: 768px) {
   .footer-text {
     max-width: 264px;
-  }
-}
-
-@media only screen and (min-width: 1158px) {
-  .footer-text {
-    padding-top: 16px;
   }
 }
 
@@ -833,6 +856,7 @@ button {
 @media only screen and (min-width: 768px) {
   .footer-input {
     min-width: 264px;
+    margin-bottom: 0;
   }
 }
 
@@ -1104,22 +1128,38 @@ button {
 /* Mobile menu */
 
 .mobile-menu {
-  display: flex;
-  flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: #fff;
-  padding: 72px 16px 40px;
-  visibility: hidden;
-  transform: translateX(-100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  height: 100%;
+  max-width: 320px;
+  padding: 72px 16px 40px;
 }
 
 .mobile-menu.is-open {
+  opacity: 1;
   transform: translateX(0);
   visibility: visible;
 }
